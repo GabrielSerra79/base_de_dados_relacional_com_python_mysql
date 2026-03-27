@@ -38,3 +38,11 @@ SELECT id, (
 FROM users
 ORDER BY RAND()
 LIMIT 20;
+
+-- Insert todas roles para o user id 1
+SELECT * FROM users_roles ur
+WHERE ur.user_id = 1;
+
+INSERT IGNORE INTO users_roles (user_id, role_id)
+SELECT 1, id
+FROM roles;
